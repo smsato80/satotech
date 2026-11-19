@@ -8,17 +8,19 @@
 <meta name="description" id="metaDesc" content="Soluções digitais para negócios em todo o Japão. Sites profissionais, sistemas de gestão e automação sob medida, com atendimento online em todo o Japão.">
 <meta name="theme-color" content="#0F1115">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="pt_BR">
+<meta property="og:locale" id="ogLocale" content="pt_BR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:site_name" content="SatoTech">
 <meta property="og:title" id="ogTitle" content="SatoTech | Seu negócio merece mais do que um site bonito.">
 <meta property="og:description" id="ogDesc" content="Da criação do site à organização das operações, desenvolvemos soluções digitais sob medida, com atendimento online em todo o Japão.">
-<meta property="og:url" content="https://satotech.jp/">
+<meta property="og:url" id="ogUrl" content="https://satotech.jp/">
 <meta property="og:image" content="https://satotech.jp/assets/og-share.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" id="twTitle" content="SatoTech | Seu negócio merece mais do que um site bonito.">
 <meta name="twitter:description" id="twDesc" content="Da criação do site à organização das operações, desenvolvemos soluções digitais sob medida, com atendimento online em todo o Japão.">
 <meta name="twitter:image" content="https://satotech.jp/assets/og-share.png">
-<link rel="canonical" href="https://satotech.jp/">
+<link rel="canonical" id="linkCanonical" href="https://satotech.jp/">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -33,8 +35,8 @@
 }
 </script>
 <link rel="alternate" hreflang="pt-BR" href="https://satotech.jp/">
-<link rel="alternate" hreflang="ja" href="https://satotech.jp/?lang=jp">
-<link rel="alternate" hreflang="en" href="https://satotech.jp/?lang=en">
+<link rel="alternate" hreflang="ja" href="https://satotech.jp/ja/">
+<link rel="alternate" hreflang="en" href="https://satotech.jp/en/">
 <link rel="alternate" hreflang="x-default" href="https://satotech.jp/">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_32.png">
@@ -308,9 +310,25 @@ html[data-tema="claro"] .cta-mail a{color:var(--verde-escuro)}
 .rodape-fim a{color:var(--suave);text-decoration:none}
 .rodape-fim a:hover{color:var(--verde)}
 html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
+
+/* ---------- auditoria 2026-11-19: cabecalho compacto, pular para o conteudo, CTAs ---------- */
+.topo .wrap{max-width:1360px}
+.pular{position:fixed;top:-120px;left:16px;z-index:300;background:var(--verde-escuro);color:#fff;padding:12px 20px;border-radius:0 0 12px 12px;font-weight:600;font-size:15px;text-decoration:none;transition:top .2s ease}
+.pular:focus{top:0;color:#fff}
+.btn-wa{display:inline-flex;align-items:center;gap:9px}
+.hero-ctas .btn-wa{justify-content:center}
+.menu-mobile .menu-cta{display:flex;justify-content:center;padding:14px 22px;margin-top:14px;color:#fff;border-bottom:none}
+.conecta-cta{margin-top:38px;text-align:center;position:relative}
+@media (max-width:1280px){
+.menu{display:none}
+.burger{display:flex}
+.topo-acoes .btn:not(.wa-mobile){display:none}
+.topo-acoes a.wa-mobile{display:inline-block}
+}
 </style>
 </head>
 <body>
+<a class="pular" href="#inicio" data-i18n="skip_txt">Pular para o conteúdo</a>
 
 <header class="topo">
   <div class="wrap topo-in">
@@ -328,7 +346,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     <div class="topo-acoes">
       <button class="lang-btn tema-btn" id="temaBtn" type="button" aria-label="Mudar para o tema claro"><svg class="ico-sol" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg><svg class="ico-lua" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></button>
       <button class="lang-btn" id="langBtn" type="button" aria-label="Mudar idioma">Português</button>
-      <a class="btn btn-verde btn-sm wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener" data-i18n="nav_cta">Conversar sobre meu projeto</a>
+      <a class="btn btn-verde btn-sm btn-wa wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="nav_cta">Conversar no WhatsApp</span></a>
       <a class="btn btn-verde btn-sm wa-mobile wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener">WhatsApp</a>
       <button class="burger" id="burgerBtn" type="button" aria-expanded="false" aria-controls="menuMobile" aria-label="Abrir menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
@@ -342,11 +360,12 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     <a href="#como" data-i18n="nav_como">Como trabalhamos</a>
     <a href="#quem" data-i18n="nav_quem">Quem está por trás</a>
     <a href="#contato" data-i18n="nav_contato">Contato</a>
+    <a class="btn btn-verde btn-wa wa-link menu-cta" href="https://wa.me/819064640042" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="menu_cta">Conversar sobre meu projeto no WhatsApp</span></a>
     <button class="tema-menu" id="temaMenuBtn" type="button" data-i18n="menu_tema">Alternar tema claro/escuro</button>
   </nav>
 </header>
 
-<main id="inicio">
+<main id="inicio" tabindex="-1">
 
   <section class="hero">
     <svg class="hero-diag" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 1440 620" aria-hidden="true">
@@ -368,7 +387,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       <span data-i18n="hero_sub">A SatoTech desenvolve sites e sistemas que facilitam o atendimento, organizam as solicitações e ajudam você a acompanhar cada oportunidade.</span></p>
       <div class="hero-ctas">
         <a class="btn btn-verde" href="#solucoes" data-i18n="hero_cta1">Conhecer nossas soluções</a>
-        <a class="btn btn-contorno wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener" data-i18n="hero_cta2">Conversar sobre meu projeto</a>
+        <a class="btn btn-contorno btn-wa wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="hero_cta2">Conversar sobre meu projeto no WhatsApp</span></a>
       </div>
       <p class="hero-nota"><strong data-i18n="hero_nota1">Soluções digitais para negócios em todo o Japão.</strong> <span data-i18n="hero_nota2">Atendimento online em todo o Japão.</span></p>
     </div>
@@ -486,6 +505,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
         </div>
       </div>
       <p class="fluxo-nota" data-i18n="fl_nota">Fluxo ilustrativo de como site e sistema trabalham juntos.</p>
+      <div class="conecta-cta reveal"><a class="btn btn-verde btn-wa wa-link" data-wa="conecta" href="https://wa.me/819064640042" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="con_cta">Falar sobre o Conecta+ no WhatsApp</span></a></div>
     </div>
   </section>
 
@@ -535,7 +555,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     <div class="wrap">
       <h2 data-i18n="cta_h2">Qual parte do seu negócio poderia funcionar melhor?</h2>
       <p data-i18n="cta_p">Conte o que você precisa organizar, automatizar ou melhorar. Vamos avaliar uma solução para sua empresa.</p>
-      <a class="btn btn-verde wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener" data-i18n="cta_btn">Conversar sobre meu projeto</a>
+      <a class="btn btn-verde btn-wa wa-link" href="https://wa.me/819064640042" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span data-i18n="cta_btn">Conversar sobre meu projeto no WhatsApp</span></a>
       <p class="cta-mail"><span data-i18n="cta_mail">Prefere e-mail?</span> <a href="mailto:satotech.jp@gmail.com">satotech.jp@gmail.com</a></p>
     </div>
   </section>
@@ -549,8 +569,8 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
         <img class="logo-rodape logo-so-escuro" src="assets/logo-branco-hd.webp" alt="SatoTech, Soluções Inteligentes" width="1400" height="317" loading="lazy" decoding="async">
         <img class="logo-rodape logo-so-claro" src="assets/logo-principal-hd.webp" alt="SatoTech, Soluções Inteligentes" width="1400" height="317" loading="lazy" decoding="async">
         <p class="rodape-desc" data-i18n="foot_desc">Soluções digitais para negócios em todo o Japão. Webサイト制作から業務管理システム、業務自動化まで対応します。</p>
-        <a class="insta-link" href="https://www.instagram.com/satotech.jp/" target="_blank" rel="noopener" aria-label="Instagram da SatoTech: @satotech.jp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span data-i18n="foot_insta">@satotech.jp no Instagram</span></a>
-        <a class="insta-link" href="mailto:satotech.jp@gmail.com" aria-label="E-mail da SatoTech: satotech.jp@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>satotech.jp@gmail.com</span></a>
+        <a class="insta-link" id="linkInsta" href="https://www.instagram.com/satotech.jp/" target="_blank" rel="noopener" aria-label="Instagram da SatoTech: @satotech.jp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg><span data-i18n="foot_insta">@satotech.jp no Instagram</span></a>
+        <a class="insta-link" id="linkEmail" href="mailto:satotech.jp@gmail.com" aria-label="E-mail da SatoTech: satotech.jp@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>satotech.jp@gmail.com</span></a>
       </div>
       <div class="rodape-col">
         <h4 data-i18n="foot_nav">Navegação</h4>
@@ -569,7 +589,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     <div class="rodape-fim">
       <span data-i18n="foot_copy">© 2026 SatoTech. Todos os direitos reservados.</span>
       <span data-i18n="foot_slogan">SatoTech, Soluções Inteligentes</span>
-      <a href="privacidade.html" data-i18n="foot_priv">Política de Privacidade</a>
+      <a href="privacidade.html" id="linkPriv" data-i18n="foot_priv">Política de Privacidade</a>
     </div>
   </div>
 </footer>
@@ -582,20 +602,23 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     pt: { geral:'Olá, Minoru. Quero conversar sobre um projeto para a minha empresa.',
           site:'Olá, Minoru. Quero um site profissional para a minha empresa.',
           gestao:'Olá, Minoru. Preciso organizar minha empresa com um sistema de gestão.',
-          automacao:'Olá, Minoru. Quero automatizar meus processos.' },
+          automacao:'Olá, Minoru. Quero automatizar meus processos.',
+          conecta:'Olá, Minoru. Quero falar sobre o Conecta+.' },
     jp: { geral:'こんにちは、佐藤さん。会社のプロジェクトについて相談したいです。',
           site:'こんにちは、佐藤さん。会社のプロフェッショナルなサイトを作りたいです。',
           gestao:'こんにちは、佐藤さん。管理システムで会社を整理したいです。',
-          automacao:'こんにちは、佐藤さん。業務を自動化したいです。' },
+          automacao:'こんにちは、佐藤さん。業務を自動化したいです。',
+          conecta:'こんにちは、佐藤さん。Conecta+について相談したいです。' },
     en: { geral:'Hello, Minoru. I would like to discuss a project for my company.',
           site:'Hello, Minoru. I want a professional website for my company.',
           gestao:'Hello, Minoru. I need to organize my company with a management system.',
-          automacao:'Hello, Minoru. I want to automate my business processes.' }
+          automacao:'Hello, Minoru. I want to automate my business processes.',
+          conecta:'Hello, Minoru. I would like to talk about Conecta+.' }
   };
   var T = {
     pt: {
       nav_problema:'O problema', nav_solucoes:'Nossas soluções', nav_conecta:'Conecta+',
-      nav_como:'Como trabalhamos', nav_quem:'Quem está por trás', nav_cta:'Conversar sobre meu projeto', nav_contato:'Contato',
+      nav_como:'Como trabalhamos', nav_quem:'Quem está por trás', nav_cta:'Conversar no WhatsApp', nav_contato:'Contato',
       cta_site:'Quero um site profissional', cta_gestao:'Preciso organizar minha empresa', cta_auto:'Quero automatizar meus processos',
       fl1_h:'Visitante', fl1_p:'Encontra sua empresa no site', fl2_h:'Solicitação', fl2_p:'Pede, agenda ou pergunta pelo site',
       fl3_h:'Conecta+', fl3_p:'Recebe e organiza no painel', fl4_h:'Atendimento organizado', fl4_p:'Sua equipe acompanha por status',
@@ -603,7 +626,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       hero_h1:'Seu negócio merece mais do que um site bonito.',
       hero_q:'Um cliente encontra sua empresa, se interessa pelo serviço e quer entrar em contato. O que acontece depois?',
       hero_sub:'A SatoTech desenvolve sites e sistemas que facilitam o atendimento, organizam as solicitações e ajudam você a acompanhar cada oportunidade.',
-      hero_cta1:'Conhecer nossas soluções', hero_cta2:'Conversar sobre meu projeto',
+      hero_cta1:'Conhecer nossas soluções', hero_cta2:'Conversar sobre meu projeto no WhatsApp',
       hero_nota1:'Soluções digitais para negócios em todo o Japão.', hero_nota2:'Atendimento online em todo o Japão.',
       prob_tag:'O problema', prob_h2:'Onde o trabalho se perde no dia a dia',
       prob_sub:'Não é falta de cliente. Muitas vezes é o que acontece depois que ele chama.',
@@ -634,16 +657,16 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       quem_p2:'Atendo empresas e empreendedores de forma online. A solução é pensada para a rotina real de quem atende, vende e opera ao mesmo tempo.',
       cta_h2:'Qual parte do seu negócio poderia funcionar melhor?',
       cta_p:'Conte o que você precisa organizar, automatizar ou melhorar. Vamos avaliar uma solução para sua empresa.',
-      cta_btn:'Conversar sobre meu projeto',
+      cta_btn:'Conversar sobre meu projeto no WhatsApp',
       foot_desc:'Soluções digitais para negócios em todo o Japão. Sites profissionais, sistemas de gestão e automação empresarial, com atendimento online.',
       foot_nav:'Navegação', foot_contato:'Contato', foot_wa:'Conversar no WhatsApp', foot_area:'Atendimento online',
       foot_copy:'© 2026 SatoTech. Todos os direitos reservados.', foot_slogan:'SatoTech, Soluções Inteligentes',
       aria_abrir:'Abrir menu', aria_fechar:'Fechar menu', aria_tema_claro:'Mudar para o tema claro', aria_tema_escuro:'Mudar para o tema escuro', aria_idioma:'Mudar idioma', menu_tema:'Alternar tema claro/escuro', foot_insta:'@satotech.jp no Instagram',
-      nav_faq:'Perguntas frequentes', foot_priv:'Política de Privacidade', cta_mail:'Prefere e-mail?', faq_tag:'Perguntas frequentes', faq_h2:'Antes de conversar com a gente', faq_q1:'Quanto custa?', faq_a1:'Depende do que a sua empresa precisa. Antes de começar, você recebe uma proposta com escopo, prazo e valores definidos. Nada é cobrado sem a sua aprovação.', faq_q2:'Quanto tempo leva?', faq_a2:'O prazo é definido na proposta, conforme o tamanho do projeto. Você acompanha cada etapa e vê a solução funcionando antes da implantação.', faq_q3:'O site é meu?', faq_a3:'Sim. O site, o domínio e o conteúdo são da sua empresa. A SatoTech desenvolve, implanta e cuida da parte técnica para você.', faq_q4:'Existe mensalidade?', faq_a4:'Os projetos têm um valor de implantação e um plano mensal de manutenção e acompanhamento, sempre definidos antes na proposta, sem surpresa.', faq_q5:'O suporte é em português?', faq_a5:'Sim. O atendimento é direto, em português, com a mesma pessoa que desenvolve a sua solução. E, quando necessário, também em japonês.', faq_q6:'Vocês emitem recibo?', faq_a6:'Sim. Você recebe contrato e recibo de cada pagamento, tudo registrado.'
+      nav_faq:'Perguntas frequentes', foot_priv:'Política de Privacidade', menu_cta:'Conversar sobre meu projeto no WhatsApp', con_cta:'Falar sobre o Conecta+ no WhatsApp', skip_txt:'Pular para o conteúdo', aria_insta:'Instagram da SatoTech: @satotech.jp', aria_email:'E-mail da SatoTech: satotech.jp@gmail.com', cta_mail:'Prefere e-mail?', faq_tag:'Perguntas frequentes', faq_h2:'Antes de conversar com a gente', faq_q1:'Quanto custa?', faq_a1:'Depende do que a sua empresa precisa. Antes de começar, você recebe uma proposta com escopo, prazo e valores definidos. Nada é cobrado sem a sua aprovação.', faq_q2:'Quanto tempo leva?', faq_a2:'O prazo é definido na proposta, conforme o tamanho do projeto. Você acompanha cada etapa e vê a solução funcionando antes da implantação.', faq_q3:'O site é meu?', faq_a3:'Sim. O site, o domínio e o conteúdo são da sua empresa. A SatoTech desenvolve, implanta e cuida da parte técnica para você.', faq_q4:'Existe mensalidade?', faq_a4:'Os projetos têm um valor de implantação e um plano mensal de manutenção e acompanhamento, sempre definidos antes na proposta, sem surpresa.', faq_q5:'O suporte é em português?', faq_a5:'Sim. O atendimento é direto, em português, com a mesma pessoa que desenvolve a sua solução. E, quando necessário, também em japonês.', faq_q6:'Vocês emitem recibo?', faq_a6:'Sim. Você recebe contrato e recibo de cada pagamento, tudo registrado.'
     },
     jp: {
       nav_problema:'課題', nav_solucoes:'ソリューション', nav_conecta:'Conecta+',
-      nav_como:'進め方', nav_quem:'代表について', nav_cta:'プロジェクトについて相談する', nav_contato:'お問い合わせ',
+      nav_como:'進め方', nav_quem:'代表について', nav_cta:'WhatsAppで相談する', nav_contato:'お問い合わせ',
       cta_site:'プロフェッショナルなサイトがほしい', cta_gestao:'会社を整理したい', cta_auto:'業務を自動化したい',
       fl1_h:'訪問者', fl1_p:'サイトであなたの会社を見つけます', fl2_h:'お問い合わせ', fl2_p:'サイトから注文、予約、質問を送ります',
       fl3_h:'Conecta+', fl3_p:'管理画面で受け取り、整理します', fl4_h:'整理された対応', fl4_p:'対応状況をステータスで確認できます',
@@ -651,7 +674,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       hero_h1:'あなたのビジネスには、見た目だけのサイト以上の価値があります。',
       hero_q:'お客様があなたの会社を見つけ、サービスに興味を持ち、連絡したいと思ったとき、その後はどうなりますか。',
       hero_sub:'SatoTechは、対応をスムーズにし、お問い合わせを整理し、一つひとつの機会を追えるウェブサイトとシステムを開発します。',
-      hero_cta1:'ソリューションを見る', hero_cta2:'プロジェクトについて相談する',
+      hero_cta1:'ソリューションを見る', hero_cta2:'WhatsAppでプロジェクトについて相談する',
       hero_nota1:'日本全国のビジネス向けデジタルソリューション。', hero_nota2:'日本全国オンライン対応。',
       prob_tag:'課題', prob_h2:'日々の業務で、仕事が止まる場所',
       prob_sub:'お客様がいないのではありません。連絡を受けた後の流れに、問題があることが多いのです。',
@@ -682,16 +705,16 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       quem_p2:'企業と起業家に、オンラインで対応しています。接客、販売、運営を一人で担う方の日常に合わせたソリューションを考えます。',
       cta_h2:'あなたのビジネスの、どこを改善できますか。',
       cta_p:'整理したいこと、自動化したいこと、改善したいことを教えてください。あなたの会社に合う方法を一緒に検討します。',
-      cta_btn:'プロジェクトについて相談する',
+      cta_btn:'WhatsAppでプロジェクトについて相談する',
       foot_desc:'日本全国のビジネス向けデジタルソリューション。Webサイト制作から業務管理システム、業務自動化まで対応します。',
       foot_nav:'メニュー', foot_contato:'お問い合わせ', foot_wa:'WhatsAppで相談する', foot_area:'オンライン対応',
       foot_copy:'© 2026 SatoTech. All rights reserved.', foot_slogan:'SatoTech, Soluções Inteligentes',
       aria_abrir:'メニューを開く', aria_fechar:'メニューを閉じる', aria_tema_claro:'ライトテーマに切り替える', aria_tema_escuro:'ダークテーマに切り替える', aria_idioma:'言語を切り替える', menu_tema:'テーマ（明/暗）を切り替える', foot_insta:'Instagramの@satotech.jp',
-      nav_faq:'よくある質問', foot_priv:'プライバシーポリシー', cta_mail:'メールでのお問い合わせは', faq_tag:'よくある質問', faq_h2:'お問い合わせの前に', faq_q1:'費用はどれくらいですか？', faq_a1:'必要な内容によって異なります。開始前に、範囲・納期・金額を明記した提案書をお渡しします。承認のない請求はありません。', faq_q2:'期間はどれくらいですか？', faq_a2:'プロジェクトの規模に応じて、提案書で納期を定めます。各工程を確認でき、導入前に動作する形でご覧いただけます。', faq_q3:'サイトは自社のものになりますか？', faq_a3:'はい。サイト、ドメイン、コンテンツはすべて貴社のものです。SatoTechは開発と導入、技術面のサポートを担当します。', faq_q4:'月額費用はありますか？', faq_a4:'導入費用と、保守・運用サポートの月額プランがあります。いずれも提案書で事前に明示します。', faq_q5:'ポルトガル語で対応してもらえますか？', faq_a5:'はい。開発担当者が直接、ポルトガル語で対応します。必要に応じて日本語でも対応します。', faq_q6:'領収書は発行されますか？', faq_a6:'はい。契約書と、各お支払いの領収書をお渡しします。'
+      nav_faq:'よくある質問', foot_priv:'プライバシーポリシー', menu_cta:'WhatsAppでプロジェクトについて相談する', con_cta:'Conecta+についてWhatsAppで相談する', skip_txt:'コンテンツへスキップ', aria_insta:'SatoTechのInstagram: @satotech.jp', aria_email:'SatoTechのメール: satotech.jp@gmail.com', cta_mail:'メールでのお問い合わせは', faq_tag:'よくある質問', faq_h2:'お問い合わせの前に', faq_q1:'費用はどれくらいですか？', faq_a1:'必要な内容によって異なります。開始前に、範囲・納期・金額を明記した提案書をお渡しします。承認のない請求はありません。', faq_q2:'期間はどれくらいですか？', faq_a2:'プロジェクトの規模に応じて、提案書で納期を定めます。各工程を確認でき、導入前に動作する形でご覧いただけます。', faq_q3:'サイトは自社のものになりますか？', faq_a3:'はい。サイト、ドメイン、コンテンツはすべて貴社のものです。SatoTechは開発と導入、技術面のサポートを担当します。', faq_q4:'月額費用はありますか？', faq_a4:'導入費用と、保守・運用サポートの月額プランがあります。いずれも提案書で事前に明示します。', faq_q5:'ポルトガル語で対応してもらえますか？', faq_a5:'はい。開発担当者が直接、ポルトガル語で対応します。必要に応じて日本語でも対応します。', faq_q6:'領収書は発行されますか？', faq_a6:'はい。契約書と、各お支払いの領収書をお渡しします。'
     }    ,
     en: {
       nav_problema:'The problem', nav_solucoes:'Our solutions', nav_conecta:'Conecta+',
-      nav_como:'How we work', nav_quem:'About the founder', nav_cta:'Talk about my project', nav_contato:'Contact',
+      nav_como:'How we work', nav_quem:'About the founder', nav_cta:'Chat on WhatsApp', nav_contato:'Contact',
       cta_site:'I want a professional website', cta_gestao:'I need to organize my business', cta_auto:'I want to automate my processes',
       fl1_h:'Visitor', fl1_p:'Finds your company on the website', fl2_h:'Request', fl2_p:'Orders, books or asks through the website',
       fl3_h:'Conecta+', fl3_p:'Receives and organizes it in the panel', fl4_h:'Organized follow-up', fl4_p:'Your team tracks each case by status',
@@ -699,7 +722,7 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       hero_h1:'Your business deserves more than a pretty website.',
       hero_q:'A customer finds your company, likes what they see and wants to get in touch. What happens next?',
       hero_sub:'SatoTech builds websites and systems that make follow-up easier, organize requests and help you track every opportunity.',
-      hero_cta1:'See our solutions', hero_cta2:'Talk about my project',
+      hero_cta1:'See our solutions', hero_cta2:'Talk about my project on WhatsApp',
       hero_nota1:'Digital solutions for businesses across Japan.', hero_nota2:'Online service across Japan.',
       prob_tag:'The problem', prob_h2:'Where work gets lost in the day to day',
       prob_sub:'It is not a lack of customers. It is often what happens after they reach out.',
@@ -730,12 +753,12 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
       quem_p2:'I work with companies and business owners, fully online. The solution is designed for the real routine of someone who serves, sells and operates at the same time.',
       cta_h2:'Which part of your business could work better?',
       cta_p:'Tell us what you need to organize, automate or improve. We will assess a solution for your company.',
-      cta_btn:'Talk about my project',
+      cta_btn:'Talk about my project on WhatsApp',
       foot_desc:'Digital solutions for businesses across Japan. Website development, management systems and business automation.',
       foot_nav:'Navigation', foot_contato:'Contact', foot_wa:'Chat on WhatsApp', foot_area:'Online service',
       foot_copy:'© 2026 SatoTech. All rights reserved.', foot_slogan:'SatoTech, Soluções Inteligentes',
       aria_abrir:'Open menu', aria_fechar:'Close menu', aria_tema_claro:'Switch to light theme', aria_tema_escuro:'Switch to dark theme', aria_idioma:'Change language', menu_tema:'Toggle light/dark theme', foot_insta:'@satotech.jp on Instagram',
-      nav_faq:'FAQ', foot_priv:'Privacy Policy', cta_mail:'Prefer email?', faq_tag:'FAQ', faq_h2:'Before you talk to us', faq_q1:'How much does it cost?', faq_a1:'It depends on what your business needs. Before anything starts, you receive a proposal with scope, timeline and prices defined. Nothing is charged without your approval.', faq_q2:'How long does it take?', faq_a2:'The timeline is set in the proposal, according to the size of the project. You follow each step and see the solution working before it goes live.', faq_q3:'Is the website mine?', faq_a3:'Yes. The website, the domain and the content belong to your company. SatoTech builds, launches and takes care of the technical side for you.', faq_q4:'Is there a monthly fee?', faq_a4:'Projects have a setup price and a monthly maintenance and support plan, always defined upfront in the proposal, with no surprises.', faq_q5:'Is support available in Portuguese?', faq_a5:'Yes. You talk directly, in Portuguese, with the same person who builds your solution. And in Japanese when needed.', faq_q6:'Do you issue receipts?', faq_a6:'Yes. You receive a contract and a receipt for every payment, all on record.'
+      nav_faq:'FAQ', foot_priv:'Privacy Policy', menu_cta:'Talk about my project on WhatsApp', con_cta:'Talk about Conecta+ on WhatsApp', skip_txt:'Skip to content', aria_insta:'SatoTech on Instagram: @satotech.jp', aria_email:'Email SatoTech: satotech.jp@gmail.com', cta_mail:'Prefer email?', faq_tag:'FAQ', faq_h2:'Before you talk to us', faq_q1:'How much does it cost?', faq_a1:'It depends on what your business needs. Before anything starts, you receive a proposal with scope, timeline and prices defined. Nothing is charged without your approval.', faq_q2:'How long does it take?', faq_a2:'The timeline is set in the proposal, according to the size of the project. You follow each step and see the solution working before it goes live.', faq_q3:'Is the website mine?', faq_a3:'Yes. The website, the domain and the content belong to your company. SatoTech builds, launches and takes care of the technical side for you.', faq_q4:'Is there a monthly fee?', faq_a4:'Projects have a setup price and a monthly maintenance and support plan, always defined upfront in the proposal, with no surprises.', faq_q5:'Is support available in Portuguese?', faq_a5:'Yes. You talk directly, in Portuguese, with the same person who builds your solution. And in Japanese when needed.', faq_q6:'Do you issue receipts?', faq_a6:'Yes. You receive a contract and a receipt for every payment, all on record.'
     }
   };
   var ORDEM = ['pt','jp','en'];
@@ -757,6 +780,10 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
           ogt:'SatoTech | Your business deserves more than a pretty website.',
           ogd:'From your website to your daily operations, we build tailored digital solutions, with online service across Japan.' }
   };
+  var CANON = { pt:'https://satotech.jp/', jp:'https://satotech.jp/ja/', en:'https://satotech.jp/en/' };
+  var LOCALE = { pt:'pt_BR', jp:'ja_JP', en:'en_US' };
+  var PRIV = { pt:'/privacidade.html', jp:'/ja/privacidade.html', en:'/privacidade.html' };
+  var BASE = { pt:'/', jp:'/ja/', en:'/en/' };
   var lang = 'pt';
   var btn = document.getElementById('langBtn');
   function aplicar(l){
@@ -776,6 +803,12 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     var od = document.getElementById('ogDesc'); if (od) od.setAttribute('content', META[l].ogd);
     var tt = document.getElementById('twTitle'); if (tt) tt.setAttribute('content', META[l].ogt);
     var td = document.getElementById('twDesc'); if (td) td.setAttribute('content', META[l].ogd);
+    var ol = document.getElementById('ogLocale'); if (ol) ol.setAttribute('content', LOCALE[l]);
+    var ou = document.getElementById('ogUrl'); if (ou) ou.setAttribute('content', CANON[l]);
+    var lc = document.getElementById('linkCanonical'); if (lc) lc.setAttribute('href', CANON[l]);
+    var lp = document.getElementById('linkPriv'); if (lp) lp.setAttribute('href', PRIV[l]);
+    var li = document.getElementById('linkInsta'); if (li) li.setAttribute('aria-label', dict.aria_insta);
+    var le = document.getElementById('linkEmail'); if (le) le.setAttribute('aria-label', dict.aria_email);
     if (typeof rotuloMenu === 'function') rotuloMenu();
     if (typeof aplicarTema === 'function') aplicarTema();
     document.querySelectorAll('.wa-link').forEach(function(a){
@@ -784,10 +817,15 @@ html[data-tema="claro"] .rodape-fim a:hover{color:var(--verde-escuro)}
     });
   }
   btn.addEventListener('click', function(){
-    aplicar(ORDEM[(ORDEM.indexOf(lang) + 1) % ORDEM.length]);
+    var prox = ORDEM[(ORDEM.indexOf(lang) + 1) % ORDEM.length];
+    try { localStorage.setItem('satotech-lang', prox); } catch(e) {}
+    location.href = BASE[prox] + (location.hash || '');
   });
   var salvo = 'pt';
   try { salvo = localStorage.getItem('satotech-lang') || 'pt'; } catch(e) {}
+  var caminho = location.pathname || '/';
+  if (/(^|\/)ja(\/|$)/.test(caminho)) salvo = 'jp';
+  if (/(^|\/)en(\/|$)/.test(caminho)) salvo = 'en';
   var qlang = null;
   try { qlang = new URLSearchParams(location.search).get('lang'); } catch(e) {}
   if (qlang && T[qlang]) salvo = qlang;
